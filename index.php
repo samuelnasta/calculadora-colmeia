@@ -2,6 +2,7 @@
 /**	
  * Declare classes
  */
+include_once 'access.php';
 include_once 'classes/database.class.php';
 include_once 'classes/helper.class.php';
 
@@ -19,3 +20,7 @@ include_once 'classes/settings.class.php';
 include_once 'templates/header.php';
 include_once 'templates/content.php';
 include_once 'templates/footer.php';
+
+
+// Instantiate Database to be used throughout the app
+$db = new DB();
