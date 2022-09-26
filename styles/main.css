@@ -347,6 +347,10 @@ body {
   font: normal 16px/1.4 "Proxima Nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+p {
+  margin: 0.5rem;
+}
+
 /**
  * Clear inner floats
  */
@@ -433,6 +437,10 @@ section {
 
 label {
   display: block;
+}
+
+.list {
+  list-style: none;
 }
 
 .loss {
