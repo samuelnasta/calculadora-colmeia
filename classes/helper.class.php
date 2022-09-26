@@ -48,4 +48,55 @@ class Helper {
 
 		return $friendly_date;
 	}
+
+
+	/**
+	 * Calculates the profit margin
+	 *
+	 * @param int $id        				The id of the service to be calculated
+	 * @param float $id        				The cost of trip
+	 * @return string 						The result <span> element
+	 */
+
+	public static function profit_margin($id, $trip_cost = null) {
+		global $db;
+		$settings = $db->get("SELECT * FROM settings", NULL, 1);
+		$service = $db->get(
+			"SELECT *
+			FROM services
+			WHERE id = :id",
+			array(':id' => $id),
+			1
+		);
+
+		$total_cost = $service->cost + $settings->cost_per_acquisition + $trip_cost;
+		$profit_margin = ($total_cost / $service->price - 1) * -100;
+		$profit_margin = round($profit_margin, 2);
+
+		if($profit_margin < $settings->profit_margin) {
+			return '<span class="loss">' . $profit_margin . '%</span>';
+		} else {
+			return '<span class="profit">' . $profit_margin . '%</span>';
+		}
+	}
+
+
+	/**
+	 * Calculates the cost of the trip to the client's house
+	 *
+	 * @param float $distance      			The distance in km between service provider
+	 * 										and the client house
+	 * @return string 						The final price of the trip
+	 */
+
+	public static function trip_cost($distance) {
+		global $db;
+		$settings = $db->get("SELECT * FROM settings", NULL, 1);
+		
+		$trip_cost = $distance / $settings->fuel_consumption * $settings->fuel_price;
+		$trip_cost = $trip_cost * 2; // Round trip
+		$trip_cost = round($trip_cost, 2);
+
+		return $trip_cost;
+	}
 }

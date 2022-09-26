@@ -1,5 +1,4 @@
 <?php
-
 $db = new DB();
 
 if(isset($_POST['submit'])) {
@@ -46,10 +45,12 @@ if(!empty($_GET['id'])) {
     <ul class="list">
     <?php if($services) {
         foreach ($services as $list_service) {
+            $trip_cost = Helper::trip_cost(10);
+            $profit = Helper::profit_margin($list_service->id, $trip_cost);
             echo <<<EOF
             <li>
                 <p>
-                    <a href="?services&id={$list_service->id}">{$list_service->name} - R$ {$list_service->price}</a>
+                    <a href="?services&id={$list_service->id}">{$list_service->name} - R$ {$list_service->price} ({$profit})</a>
                     <a href="?services&delete={$list_service->id}">Apagar</a>
                 </p>
             </li>
@@ -59,7 +60,7 @@ if(!empty($_GET['id'])) {
     ?>
     </ul>
 
-    
+
     <h3>Adicionar serviço</h3>
     <form action="?services" method="post">
         <label>

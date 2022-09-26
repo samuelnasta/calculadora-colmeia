@@ -425,4 +425,13 @@ nav li {
 
 label {
   display: block;
+}
+
+.loss {
+  color: red;
+  font-weight: bold;
+}
+
+.profit {
+  color: green;
 }/*# sourceMappingURL=main.css.map */
