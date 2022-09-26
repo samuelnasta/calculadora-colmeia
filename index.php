@@ -8,8 +8,9 @@ include_once 'classes/helper.class.php';
 
 include_once 'classes/api.class.php';
 include_once 'classes/client.class.php';
-include_once 'classes/order.class.php';
 include_once 'classes/service.class.php';
+include_once 'classes/order.class.php';
+include_once 'classes/provider.class.php';
 include_once 'classes/settings.class.php';
 
 /**	
