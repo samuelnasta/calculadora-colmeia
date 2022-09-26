@@ -99,4 +99,20 @@ class Helper {
 
 		return $trip_cost;
 	}
+
+
+	/**
+	 * Calculates the discount for companies
+	 *
+	 * @param float $price      			The full price
+	 * @return string						The final price with discount
+	 */
+
+	public static function pj_discount($price) {
+		$discount = 10; // 10%
+		$discount = 1 - $discount / 100;		
+		$final_price = $price * $discount;
+
+		return $final_price;
+	}
 }
