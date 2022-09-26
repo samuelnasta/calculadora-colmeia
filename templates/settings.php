@@ -64,6 +64,7 @@ if(isset($_POST['submit-service-provider'])) {
             'zipcode' => $_POST['zipcode'],
             'address' => $_POST['address'],
             'number' => $_POST['number'],
+            'neighborhood' => $_POST['neighborhood'],
             'city' => $_POST['city'],
             'state' => $_POST['state'],
         )
@@ -76,7 +77,7 @@ if(isset($_POST['submit-service-provider'])) {
 
 $service_provider = $db->get("SELECT * FROM services_providers", NULL, 1);
 if(empty($service_provider)) {
-    $service_provider = (object)['id' => NULL, 'name' => NULL, 'zipcode' => NULL, 'address' => NULL, 'number' => NULL, 'city' => NULL, 'state' => NULL];
+    $service_provider = (object)['id' => NULL, 'name' => NULL, 'zipcode' => NULL, 'address' => NULL, 'number' => NULL, 'neighborhood' => NULL, 'city' => NULL, 'state' => NULL];
 }
 ?>
 
@@ -85,27 +86,40 @@ if(empty($service_provider)) {
     <form action="?settings" method="post">
         <label>
             Nome
-            <input type="text" name="name" value="<?= $service_provider->name; ?>">
+            <input type="text" id="name" name="name"
+            value="<?= $service_provider->name; ?>">
         </label>
         <label>
-            CEP
-            <input type="text" name="zipcode" value="<?= $service_provider->zipcode; ?>">
+            CEP <span class="description">(sem o hífen)</span>
+            <input type="text" id="zipcode" name="zipcode"
+            value="<?= $service_provider->zipcode; ?>"
+            inputmode="numeric" pattern="[0-9]{8}"
+            onblur="fill_address(this.value)">
         </label>
         <label>
             Endereço
-            <input type="text" name="address" value="<?= $service_provider->address; ?>">
+            <input type="text" id="address" name="address"
+            value="<?= $service_provider->address; ?>">
         </label>
         <label>
             Número
-            <input type="text" name="number" value="<?= $service_provider->number; ?>">
+            <input type="text" id="number" name="number"
+            value="<?= $service_provider->number; ?>">
+        </label>
+        <label>
+            Bairro
+            <input type="text" id="neighborhood" name="neighborhood"
+             value="<?= $service_provider->neighborhood; ?>">
         </label>
         <label>
             Cidade
-            <input type="text" name="city" value="<?= $service_provider->city; ?>">
+            <input type="text" id="city" name="city"
+             value="<?= $service_provider->city; ?>">
         </label>
         <label>
             Estado
-            <input type="text" name="state" value="<?= $service_provider->state; ?>">
+            <input type="text" id="state" name="state"
+            value="<?= $service_provider->state; ?>">
         </label>
 
         <input type="submit" name="submit-service-provider" value="Salvar">
