@@ -50,10 +50,14 @@ class DB extends PDO {
         $query->execute($params);
         $results = $query->fetchAll();
         
-        if($limit === 1) {
-            return $results[0];
+        if($results){
+            if($limit === 1) {
+                return $results[0];
+            } else {
+                return $results;
+            }
         } else {
-            return $results;
+            return;
         }
     }
 
@@ -67,7 +71,7 @@ class DB extends PDO {
 	 * @return int                  Number of rows affected
 	 */
     public function set($table, $params = null) {
-        $fields = implode(",", array_keys($params));
+        $fields = implode(", ", array_keys($params));
         $values = implode(", :", array_keys($params));
 
         $sql = "INSERT INTO $table
@@ -77,7 +81,7 @@ class DB extends PDO {
         foreach ($params as $key => $value) {
             $bind_params[":$key"] = $value;
         }
-        
+
         $query = $this->prepare($sql);
         $query->execute($bind_params);
 

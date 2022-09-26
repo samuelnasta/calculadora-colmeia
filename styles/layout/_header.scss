@@ -1,3 +1,25 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+nav {
+    bottom: 0;
+    position: fixed;
+
+    ul {
+        list-style: none;
+    }
+    li {
+        float: left;
+        width: 25%;
+    }
+}
+
+#logo {
+    background: url("images/logo.png") center center no-repeat;
+    background-size: contain;
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    text-indent: -9999px;
+    width: auto;
+}
