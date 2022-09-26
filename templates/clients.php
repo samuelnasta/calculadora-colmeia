@@ -12,7 +12,7 @@ $this_client = (!empty($_GET['id']))
 <section id="clients">
     <h1>Clientes</h1>
     
-    <?php $clients = $client->list(); ?>
+    <?php $client->list(); ?>
 
     <form action="?clients" id="form-clients" method="post">
         <input type="hidden" name="submit-client">
