@@ -5,7 +5,7 @@ if (form_client) {
         let cpf_cnpj_value = document.getElementById("cpf_cnpj").value;
 
         if (validate_cpf_cnpj(cpf_cnpj_value)) {
-            document.getElementById("form-clients").requestSubmit();
+            document.getElementById("form-clients").submit();
         } else {
             alert("CPF/CNPJ inválido");
         }
