@@ -28,6 +28,7 @@ if(empty($settings)) {
     <h1>Configurações</h1>
     
     <form action="?settings" method="post">
+        <input type="hidden" name="submit-settings">
         <label>
             Margem de lucro
             <input type="text" name="profit-margin" value="<?= $settings->profit_margin ; ?>">
@@ -84,6 +85,7 @@ if(empty($service_provider)) {
 
     <h1>Prestador de serviços</h1>
     <form action="?settings" method="post">
+        <input type="hidden" name="submit-service-provider">
         <label>
             Nome
             <input type="text" id="name" name="name"

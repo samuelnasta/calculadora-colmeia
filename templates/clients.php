@@ -1,10 +1,71 @@
 <?php
+$db = new DB();
+
+if(isset($_POST['name'])) {
+    $insert = $db->set(
+        'clients',
+        array(
+            'name' => $_POST['name'],
+            'zipcode' => $_POST['zipcode'],
+            'address' => $_POST['address'],
+            'number' => $_POST['number'],
+            'neighborhood' => $_POST['neighborhood'],
+            'city' => $_POST['city'],
+            'state' => $_POST['state'],
+            'cpf_cnpj' => $_POST['cpf_cnpj'],
+        )
+    );
+    if($insert){
+        echo '<div class="message-success">Cliente incluído com sucesso</div>';
+    }
+}
+
+
+if(!empty($_GET['delete'])) {
+    $delete = $db->delete("clients", $_GET['delete']);
+    if($delete){
+        echo '<div class="message-success">Cliente removido com sucesso</div>';
+    }
+}
+
+
+$clients = $db->get("SELECT * FROM clients");
 $client = (object)['id' => NULL, 'name' => NULL, 'zipcode' => NULL, 'address' => NULL, 'number' => NULL, 'neighborhood' => NULL, 'city' => NULL, 'state' => NULL, 'cpf_cnpj' => NULL];
+
+if(!empty($_GET['id'])) {
+    $client = $db->get(
+        "SELECT *
+        FROM clients
+        WHERE id = :id",
+        array(':id' => $_GET['id']),
+        1
+    );
+}
+
 ?>
+
 <section id="clients">
     <h1>Clientes</h1>
     
+    <ul class="list">
+    <?php if($clients) {
+        foreach ($clients as $list_client) {
+            echo <<<EOF
+            <li>
+                <p>
+                    <a href="?clients&id={$list_client->id}">{$list_client->name}</a>
+                    <a href="?clients&delete={$list_client->id}">Apagar</a>
+                </p>
+            </li>
+            EOF;
+        }
+    }
+    ?>
+    </ul>
+
+
     <form action="?clients" id="form-clients" method="post">
+        <input type="hidden" name="submit-client">
         <label>
             Nome
             <input type="text" id="name" name="name"
