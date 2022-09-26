@@ -2,8 +2,10 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 nav {
+    background: white;
     bottom: 0;
     font-size: 0.8rem;
+    padding: 0.5rem;
     position: fixed;
 
     ul {
@@ -16,6 +18,10 @@ nav {
         padding: 0 0.25rem;
         text-align: center;
     }
+}
+
+section {
+    margin-bottom: 3rem;
 }
 
 #logo {

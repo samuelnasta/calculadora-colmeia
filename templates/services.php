@@ -13,6 +13,8 @@ $this_service = (!empty($_GET['id']))
 <section>
     <h1>Serviços</h1>
     
+    <p><strong>MLS</strong> - Margem de Lucro Simples<br>
+    <strong>MLR</strong> - Margem de Lucro Real</p>
 
     <?php $service->list(); ?>
 

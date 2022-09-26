@@ -87,17 +87,25 @@ class Service {
 	 */
 
     public function list() {
-        $services = $this->db->get("SELECT * FROM services");
+        $services = $this->db->get(
+            "SELECT *,
+            CONCAT('R$ ', price-cost) AS profit,
+            ROUND((cost / price * 100), 2) AS profit_margin
+            FROM services
+            ORDER BY profit_margin DESC");
 
         if($services) {
             echo '<ul class="list">';
             foreach ($services as $service) {
                 $trip_cost = Helper::trip_cost(10);
                 $profit = Helper::profit_margin($service->id, $trip_cost);
+
                 echo <<<EOF
                 <li>
                     <p>
-                        <a href="?services&id={$service->id}">{$service->name} - R$ {$service->price} ({$profit})</a>
+                        <a href="?services&id={$service->id}">
+                        {$service->name} - R$ {$service->price}<br>
+                        MLS {$service->profit_margin}% - MLR {$profit}</a>
                         <a href="?services&delete={$service->id}">Apagar</a>
                     </p>
                 </li>
