@@ -1,11 +1,11 @@
 <?php
-$client = (object)['id' => NULL, 'name' => NULL, 'zipcode' => NULL, 'address' => NULL, 'number' => NULL, 'neighborhood' => NULL, 'city' => NULL, 'state' => NULL];
+$client = (object)['id' => NULL, 'name' => NULL, 'zipcode' => NULL, 'address' => NULL, 'number' => NULL, 'neighborhood' => NULL, 'city' => NULL, 'state' => NULL, 'cpf_cnpj' => NULL];
 ?>
 <section id="clients">
     <h1>Clientes</h1>
     
-    <form action="" method="post">
-    <label>
+    <form action="?clients" id="form-clients" method="post">
+        <label>
             Nome
             <input type="text" id="name" name="name"
             value="<?= $client->name; ?>">
@@ -41,6 +41,12 @@ $client = (object)['id' => NULL, 'name' => NULL, 'zipcode' => NULL, 'address' =>
             Estado
             <input type="text" id="state" name="state"
             value="<?= $client->state; ?>">
+        </label>
+        <label>
+            CPF / CNPJ
+            <input type="text" id="cpf_cnpj" name="cpf_cnpj"
+            onblur="console.log(validate_cpf_cnpj(this.value))"
+            value="<?= $client->cpf_cnpj; ?>">
         </label>
 
         <input type="submit" value="Salvar">

@@ -9,8 +9,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/main.css">
 
-    <script defer type="application/javascript" src="scripts/ajax.js"></script>
     <script defer type="application/javascript" src="scripts/functions.js"></script>
+    <script defer type="application/javascript" src="scripts/cpf_cnpj.js"></script>
     <script defer type="application/javascript" src="scripts/zipcode.js"></script>
 </head>
 
