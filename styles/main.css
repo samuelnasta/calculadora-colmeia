@@ -401,14 +401,18 @@ body {
 
 nav {
   bottom: 0;
+  font-size: 0.8rem;
   position: fixed;
 }
 nav ul {
   list-style: none;
+  margin: 0 auto;
+  padding: 0;
 }
 nav li {
   float: left;
-  width: 25%;
+  padding: 0 0.25rem;
+  text-align: center;
 }
 
 #logo {

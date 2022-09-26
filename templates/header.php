@@ -22,6 +22,7 @@
         <li><a href="?clients">Clientes</a></li>
         <li><a href="?services">Serviços</a></li>
         <li><a href="?orders">Pedidos</a></li>
+        <li><a href="?providers">Prestadores</a></li>
         <li><a href="?settings">Configurações</a></li>
     </ul>
 </nav>
