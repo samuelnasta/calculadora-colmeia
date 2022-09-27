@@ -1,5 +1,4 @@
 <?php
-$db = new DB();
 $service = new Service();
 
 if(isset($_POST['submit'])) { $service->add(); }
@@ -13,8 +12,10 @@ $this_service = (!empty($_GET['id']))
 <section>
     <h1>Serviços</h1>
     
-    <p><strong>MLS</strong> - Margem de Lucro Simples<br>
-    <strong>MLR</strong> - Margem de Lucro Real</p>
+    <p class="description">
+        <strong>MLS</strong> - Margem de Lucro Simples<br>
+        <strong>MLR</strong> - Margem de Lucro Real
+    </p>
 
     <?php $service->list(); ?>
 
@@ -26,11 +27,11 @@ $this_service = (!empty($_GET['id']))
             <input type="text" name="name" required value="<?= $this_service->name; ?>">
         </label>
         <label>
-            Preço
+            Preço <span class="description">- R$</span>
             <input type="text" name="price" required value="<?= $this_service->price; ?>">
         </label>
         <label>
-            Custo
+            Custo <span class="description">- R$</span>
             <input type="text" name="cost" required value="<?= $this_service->cost; ?>">
         </label>
 

@@ -105,8 +105,8 @@ class Service {
                     <p>
                         <a href="?services&id={$service->id}">
                         {$service->name} - R$ {$service->price}<br>
-                        MLS {$service->profit_margin}% - MLR {$profit}</a>
-                        <a href="?services&delete={$service->id}">Apagar</a>
+                        MLS: {$service->profit_margin}% - MLR: {$profit}</a>
+                        <a href="?services&delete={$service->id}" class="delete">Apagar</a>
                     </p>
                 </li>
                 EOF;

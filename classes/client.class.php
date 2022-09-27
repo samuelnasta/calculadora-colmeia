@@ -101,7 +101,7 @@ class Client {
                 <li>
                     <p>
                         <a href="?clients&id={$client->id}">{$client->name}</a>
-                        <a href="?clients&delete={$client->id}">Apagar</a>
+                        <a href="?clients&delete={$client->id}" class="delete">Apagar</a>
                     </p>
                 </li>
                 EOF;

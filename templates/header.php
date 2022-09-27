@@ -19,10 +19,10 @@
 <div id="logo">Colmeia</div>
 <nav>
     <ul>
-        <li><a href="?clients">Clientes</a></li>
-        <li><a href="?services">Serviços</a></li>
-        <li><a href="?orders">Pedidos</a></li>
-        <li><a href="?providers">Prestadores</a></li>
-        <li><a href="?settings">Configurações</a></li>
+        <li><a href="?clients"><i class="icon-client"></i>Clientes</a></li>
+        <li><a href="?services"><i class="icon-service"></i>Serviços</a></li>
+        <li><a href="?orders"><i class="icon-order"></i>Pedidos</a></li>
+        <li><a href="?providers"><i class="icon-provider"></i>Prestadores</a></li>
+        <li><a href="?settings"><i class="icon-settings"></i>Configurações</a></li>
     </ul>
 </nav>

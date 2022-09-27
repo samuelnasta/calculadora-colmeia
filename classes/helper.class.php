@@ -59,7 +59,7 @@ class Helper {
 	 */
 
 	public static function profit_margin($id, $trip_cost = null) {
-		global $db;
+		$db = new DB();
 		$settings = $db->get("SELECT * FROM settings", NULL, 1);
 		$service = $db->get(
 			"SELECT *
@@ -90,7 +90,7 @@ class Helper {
 	 */
 
 	public static function trip_cost($distance) {
-		global $db;
+		$db = new DB();
 		$settings = $db->get("SELECT * FROM settings", NULL, 1);
 		
 		$trip_cost = $distance / $settings->fuel_consumption * $settings->fuel_price;

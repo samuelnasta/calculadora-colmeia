@@ -14,6 +14,7 @@ $this_client = (!empty($_GET['id']))
     
     <?php $client->list(); ?>
 
+    <h3>Adicionar cliente</h3>
     <form action="?clients" id="form-clients" method="post">
         <input type="hidden" name="submit-client">
         <label>
@@ -22,7 +23,7 @@ $this_client = (!empty($_GET['id']))
             value="<?= $this_client->name; ?>">
         </label>
         <label>
-            CEP
+            CEP <span class="description">(sem hífen)</span>
             <input type="text" id="zipcode" name="zipcode"
             value="<?= $this_client->zipcode; ?>"
             inputmode="numeric" pattern="[0-9]{8}"
@@ -54,7 +55,7 @@ $this_client = (!empty($_GET['id']))
             value="<?= $this_client->state; ?>">
         </label>
         <label>
-            CPF / CNPJ
+            CPF / CNPJ <span class="description">(com pontos, hífen e barra)</span>
             <input type="text" id="cpf_cnpj" name="cpf_cnpj"
             onblur="console.log(validate_cpf_cnpj(this.value))"
             value="<?= $this_client->cpf_cnpj; ?>">

@@ -1,0 +1,64 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.delete {
+    color: $color3;
+    float: right;
+    font-size: 0;
+    visibility: hidden;
+
+    &::after {
+        content: "\01F5D1";
+        font-size: 0.833rem;
+        margin-right: -0.5rem;
+        padding: 0.5rem;
+        vertical-align: middle;
+        visibility: visible;
+    }
+}
+
+.description {
+    color: $color1;
+    font-size: 0.833rem;
+}
+
+.list {
+    border-collapse: separate;
+    border-radius: 20px;
+    list-style: none;
+    margin: 1rem 0;
+
+    li {
+        border: 1px solid $color6;
+        display: block;
+        padding: 0.5rem;
+
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        &:nth-child(odd) {
+            background-image: linear-gradient(white, $color6);
+        }
+
+        &:nth-child(even) {
+            background-image: linear-gradient(white, $color6);
+        }
+    }
+}
+
+.loss {
+    color: $color3;
+    font-weight: bold;
+}
+
+.profit {
+    color: $color4;
+}

@@ -2,34 +2,24 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-/**
- * Set up a decent box model on the root element
- */
-html {
+* {
     box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-/**
- * Basic styles for links
- */
 a {
-    color: $brand-color;
+    color: $color2;
+    font-weight: 400;
     text-decoration: none;
+}
 
-    @include on-event {
-        color: $color1;
-        text-decoration: underline;
-    }
+body {
+    max-width: 1180px;
+}
+
+section {
+    margin-bottom: 4rem;
+    padding: 1rem;
 }

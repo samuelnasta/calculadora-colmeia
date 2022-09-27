@@ -12,19 +12,19 @@ $this_setting = $settings->get();
     <form action="?settings" method="post">
         <input type="hidden" name="submit-settings">
         <label>
-            Margem de lucro
+            Margem de lucro <span class="description">- %</span>
             <input type="text" name="profit-margin" value="<?= $this_setting->profit_margin ; ?>">
         </label>
         <label>
-            Consumo de combustível
+            Consumo de combustível <span class="description">- km/l</span>
             <input type="text" name="fuel-consumption" value="<?= $this_setting->fuel_consumption ; ?>">
         </label>
         <label>
-            Preço do litro de combustível
+            Preço do litro de combustível <span class="description">- R$</span>
             <input type="text" name="fuel-price" value="<?= $this_setting->fuel_price ; ?>">
         </label>
         <label>
-            Custo de aquisição GoogleAds (CAC)
+            Custo de aquisição GoogleAds (CAC) <span class="description">- R$</span>
             <input type="text" name="cost-per-acquisition" value="<?= $this_setting->cost_per_acquisition ; ?>">
         </label>
 

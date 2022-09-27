@@ -2,6 +2,29 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
+input {
+    border: 1px solid $color1;
+    border-radius: 20px;
+    color: $color1;
+    display: block;
+    font-family: $font;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.3rem 0 1rem;
+    padding: 0.3rem 1rem;
+    width: 100%;
+}
+
+input[type="submit"] {
+    background: $color2;
+    border: 1px solid $color2;
+    color: white;
+    letter-spacing: 0.05rem;
+    margin: 2rem 0;
+    padding: 0.6rem 1rem;
+    text-transform: uppercase;
+}
+
 label {
     display: block;
 }

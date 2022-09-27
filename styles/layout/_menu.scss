@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+nav {
+    background: #fff;
+    bottom: 0;
+    font-size: 0.579rem;
+    position: fixed;
+    width: 100%;
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-content: space-evenly;
+        justify-items: center;
+
+        li {
+            border: 1px solid $color6;
+            border-right: none;
+            display: block;
+            height: 100%;
+            padding: 0.5rem 0;
+            text-align: center;
+            width: 100%;
+
+            &:hover {
+                background: $color6;
+            }
+
+            &:hover a {
+                font-weight: 700;
+            }
+
+            &:last-child {
+                border-right: 1px solid $color6;
+            }
+
+            i {
+                background-size: contain;
+                display: block;
+                height: 32px;
+                margin: 0 auto 0.5rem;
+                width: 32px;
+            }
+        }
+    }
+}
+
+.icon-client {
+    background-image: url("images/client-icon.png");
+}
+.icon-service {
+    background-image: url("images/service-icon.png");
+}
+.icon-order {
+    background-image: url("images/order-icon.png");
+}
+.icon-provider {
+    background-image: url("images/provider-icon.png");
+}
+.icon-settings {
+    background-image: url("images/settings-icon.png");
+}
+
+#logo {
+    background: url("images/logo.png") center center no-repeat;
+    background-size: contain;
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    text-indent: -9999px;
+    width: auto;
+}
